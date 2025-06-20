@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Personal Assistant</h1>
+            <div class="header-subtitle">Your intelligent scheduling companion</div>
+        </header>
+
+        <div class="tabs">
+            <div class="tab active" data-tab="personal">Chat</div>
+            <div class="tab" data-tab="calendar">Calendar</div>
+        </div>
+
+        <div id="personal-chat" class="chat-container active">
+            <div class="chat-messages" id="personal-messages">
+                <div class="message assistant-message">
+                    <div style="font-weight: 600; font-size: 18px; margin-bottom: 10px;">🤖 Welcome to Your Personal
+                        Assistant!</div>
+                    <p>I'm here to help you manage your schedule and answer your questions. You can ask me to:</p>
+                    <ul style="padding-left: 20px; margin: 10px 0;">
+                        <li>📅 Schedule new appointments</li>
+                        <li>🗓 Check your calendar</li>
+                        <li>🔍 Get information on various topics</li>
+                        <li>📝 Take notes and reminders</li>
+                    </ul>
+                    <p>How can I assist you today?</p>
+                </div>
+            </div>
+            <div class="typing-indicator" id="personal-typing">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <button class="clear-button" onclick="clearChat('personal')">Clear Chat</button>
+            <div class="message-input">
+                <textarea id="personal-input" placeholder="Type your message here..." rows="2"></textarea>
+                <button onclick="sendMessage('personal')">Send</button>
+            </div>
+        </div>
+
+        <div id="calendar-chat" class="chat-container">
+            <div class="calendar-view">
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button id="prev-month" class="month-nav-btn">&lt;</button>
+                        <h2 id="month-year">Month Year</h2>
+                        <button id="next-month" class="month-nav-btn">&gt;</button>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="calendar-day-header">Sun</div>
+                        <div class="calendar-day-header">Mon</div>
+                        <div class="calendar-day-header">Tue</div>
+                        <div class="calendar-day-header">Wed</div>
+                        <div class="calendar-day-header">Thu</div>
+                        <div class="calendar-day-header">Fri</div>
+                        <div class="calendar-day-header">Sat</div>
+                        <!-- Calendar days will be inserted here by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="day-appointments" id="day-appointments">
+                    <div class="appointments-header">
+                        <h3 id="selected-date">Appointments for Today</h3>
+                        <div class="appointments-actions">
+                            <button id="add-appointment" class="action-button">+ New Appointment</button>
+                        </div>
+                    </div>
+                    <div id="appointments-list" class="appointments-list">
+                        <!-- Appointments will be inserted here by JavaScript -->
+                        <p class="no-appointments">No appointments for this day</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
