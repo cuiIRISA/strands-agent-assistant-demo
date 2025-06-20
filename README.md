@@ -5,8 +5,8 @@ This is a web-based personal assistant application with a separated frontend and
 
 <table>
   <tr>
-    <td><img src="./image/1.jpg" width="400" /></td>
-    <td><img src="./image/2.jpg" width="400" /></td>
+    <td><img src="./image/1.png" width="400" /></td>
+    <td><img src="./image/2.png" width="400" /></td>
   </tr>
   <tr>
     <td align="center">Assistant UI</td>
